@@ -1,0 +1,91 @@
+@charset "utf-8";
+@import "compass";
+
+$base-font-size: 14px;
+
+$contentWidth:980px;
+
+//14px基準
+$f10:71%;
+$f11:79%;
+$f12:86%;
+$f13:93%;
+$f14:100%;
+$f15:107%;
+$f16:114%;
+$f17:121%;
+$f18:129%;
+$f19:136%;
+$f20:143%;
+$f21:150%;
+$f22:157%;
+$f24:171%;
+$f26:185%;
+$f28:200%;
+$f30:214%;
+$f32:229%;
+$f34:243%;
+
+$bgColor:#eee;
+$linkColor:#923636;
+
+$textColor:#000;
+
+
+
+
+$alpha:0.6;
+$alphaInDark:0.9;
+
+
+@mixin contentContainer{
+  position:relative;
+  display:block;
+  width:$contentWidth;
+  margin:0 auto;
+}
+
+@mixin sprite-with-text($map, $sprite) {
+  @include sprite($map, $sprite, true, 0,0);
+  background-image: $map;
+  background-repeat: no-repeat;
+}
+
+@mixin blockAnchor{
+  a{
+    display:block;
+    width:100%;
+    height:100%;
+  }
+}
+
+@mixin singleSpriteWithText($image){
+  display:block;
+  background: url($image) no-repeat;
+  width:image-width($image);
+  height:image-height($image);
+}
+
+@mixin singleSprite($image){
+  @include hide-text;
+  @include singleSpriteWithText($image);
+}
+
+
+@mixin alpha{
+  @include transition(all .3s ease);
+  &:hover{
+    @include opacity($alpha);
+    cursor:pointer;
+  }
+}
+
+@mixin alphaInDark{
+  @include transition(all .3s ease);
+  &:hover{
+    @include opacity($alphaInDark);
+    cursor:pointer;
+  }
+}
+
+

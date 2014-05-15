@@ -1,0 +1,39 @@
+!!! 5
+<!--[if IE 7]>
+<html class="ie ie7" lang="ja">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="ja">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+%html(lang="ja")
+  <!--<![endif]-->
+  %head
+    %meta(charset="UTF-8")
+    %meta(http-equiv="Content-Style-Type" content="text/css")
+    %meta(http-equiv="Content-Script-Type" content="text/javascript")
+    / Always force latest IE rendering engine or request Chrome Frame
+    %meta(content="IE=edge,chrome=1" http-equiv="X-UA-Compatible")
+    %title #{current_page.data.title}
+    %meta(name="keywords" content="#{current_page.data.keywords.join(',')}")
+    %meta(name="description" content="#{current_page.data.description}")
+    %meta(name="viewport" content="width=980")
+    / og
+    %meta(property="og:site_name" content="#{current_page.data.site_name}")
+    %meta(property="og:title" content="#{current_page.data.title}")
+    %meta(property="og:description" content="#{current_page.data.description}")
+    %meta(property="og:type" content="website")
+    %meta(property="og:url" content="#{current_page.data.url}")
+    %meta(property="og:image" content="#{current_page.data.image}")
+    %meta(property="og:locale" content="ja_JP")
+    - current_page.data.styles.each do|style|
+      -#= stylesheet_link_tag style
+      %link(rel="stylesheet" href="#{rel_root}css/#{style}.css")
+    - current_page.data.scripts.each do|script|
+      -#= javascript_include_tag script
+      %script(src="#{rel_root}js/#{script}.js")
+    =partial "ga"
+  %body(class="body_static")
+    =partial "header"
+    = yield
+    =partial "footer"

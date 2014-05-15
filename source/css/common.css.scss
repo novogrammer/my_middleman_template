@@ -1,0 +1,54 @@
+
+@import "_def.scss";
+@include global-reset;
+
+
+/*共通*/
+
+.alignLeft{
+  text-align: left;
+}
+.alignCenter{
+  text-align: center;
+}
+.alignRight{
+  text-align: right;
+}
+
+
+.alpha{
+  @include alpha;
+}
+
+.alphaInDark{
+  @include alphaInDark;
+}
+
+.clearfix{
+  @include clearfix;
+}
+
+body{
+  color:$textColor;
+  width:100%;
+  font-size:$base-font-size;
+  font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',Osaka,sans-serif;
+  -webkit-text-size-adjust: 100%;/*for iPhone*/
+  -ms-text-size-adjust: 100%;
+}
+html * {max-height:1000000px;}/*for Android*/
+
+a{
+  text-decoration: underline;
+  color:$linkColor;
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+.clearBoth{
+  clear:both !important;
+}
+
+
+
