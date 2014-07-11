@@ -2,10 +2,10 @@
 # the following line to use "https"
 source 'http://rubygems.org'
 
-gem "middleman", "~>3.1.4"
+gem "middleman","~>3.3.3"
 
 # Live-reloading plugin
-gem "middleman-livereload", "~> 3.1.0"
+gem "middleman-livereload","~>3.3.3"
 
 # For faster file watcher updates on Windows:
 gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]
@@ -17,13 +17,12 @@ end
 
 
 
-#gem 'sass'
-#http://qiita.com/kubosho_/items/ee6e03f72706d89306e0
-#avoid error
-gem 'sass','3.2.18'
+#for sass 3.3
+gem 'compass','~> 1.0.0.alpha.20'
+gem 'sass','3.3.9'
+
 gem 'coffee-script'
 
-gem 'animation' #https://github.com/ericam/compass-animation
 
 #gem 'middleman-jasmine'
 
