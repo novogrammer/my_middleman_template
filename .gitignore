@@ -20,3 +20,6 @@
 #ignore Gemfile.lock
 Gemfile.lock
 
+# Ignore the bower_components directory
+/bower_components
+

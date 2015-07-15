@@ -61,7 +61,7 @@ $alphaInDark:0.9;
 
 @mixin singleSpriteWithText($image){
   display:block;
-  background: url($image) no-repeat;
+  background: image-url($image) no-repeat;
   width:image-width($image);
   height:image-height($image);
 }
@@ -69,6 +69,19 @@ $alphaInDark:0.9;
 @mixin singleSprite($image){
   @include hide-text;
   @include singleSpriteWithText($image);
+}
+
+@mixin singleCenterSpriteWithText($image){
+  display:block;
+  background: image-url($image) no-repeat center top;
+  width:100%;
+  height:image-height($image);
+}
+@mixin bgRepeatX($image){
+  display:block;
+  background: image-url($image) repeat-x center top;
+  width:100%;
+  height:image-height($image);
 }
 
 

@@ -57,6 +57,11 @@ set :js_dir, 'js'
 
 set :images_dir, 'img'
 
+configure :development do
+  #開発中も確認する
+  activate :relative_assets
+end
+
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
@@ -77,9 +82,24 @@ configure :build do
   compass_config do |config|
     config.sass_options = {:line_comments => false}
   end
+
 end
 
-
+#bower init
+after_configuration do
+  #bower install jquery=jquery#^1 --save
+  sprockets.append_path "../bower_components/jquery/dist"
+  sprockets.import_asset "jquery.js"
+  sprockets.import_asset "jquery.min.js"
+  #bower install jquery.easing --save
+  sprockets.append_path "../bower_components/jquery.easing/js"
+  sprockets.import_asset "jquery.easing.js"
+  sprockets.import_asset "jquery.easing.min.js"
+  #bower install velocity --save
+  sprockets.append_path "../bower_components/velocity"
+  sprockets.import_asset "velocity.js"
+  sprockets.import_asset "velocity.min.js"
+end
 
 helpers do
   def rel_root
