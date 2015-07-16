@@ -99,6 +99,35 @@ after_configuration do
   sprockets.append_path "../bower_components/velocity"
   sprockets.import_asset "velocity.js"
   sprockets.import_asset "velocity.min.js"
+  #bower install gsap --save
+  sprockets.append_path "../bower_components/gsap/src/uncompressed/"
+  sprockets.import_asset "jquery.gsap.js"
+  sprockets.import_asset "TimelineLite.js"
+  sprockets.import_asset "TimelineMax.js"
+  sprockets.import_asset "TweenLite.js"
+  sprockets.import_asset "TweenMax.js"
+  sprockets.append_path "../bower_components/gsap/src/minified/"
+  sprockets.import_asset "jquery.gsap.min.js"
+  sprockets.import_asset "TimelineLite.min.js"
+  sprockets.import_asset "TimelineMax.min.js"
+  sprockets.import_asset "TweenLite.min.js"
+  sprockets.import_asset "TweenMax.min.js"
+  #bower install scrollmagic --save
+  sprockets.append_path "../bower_components/scrollmagic/scrollmagic/uncompressed/plugins/"
+  sprockets.import_asset "debug.addIndicators.js"
+  sprockets.import_asset "jquery.ScrollMagic.js"
+  sprockets.import_asset "animation.gsap.js"
+  sprockets.import_asset "animation.velocity.js"
+  sprockets.append_path "../bower_components/scrollmagic/scrollmagic/uncompressed/"
+  sprockets.import_asset "ScrollMagic.js"
+  sprockets.append_path "../bower_components/scrollmagic/scrollmagic/minified/plugins/"
+  sprockets.import_asset "debug.addIndicators.min.js"
+  sprockets.import_asset "jquery.ScrollMagic.min.js"
+  sprockets.import_asset "animation.gsap.min.js"
+  sprockets.import_asset "animation.velocity.min.js"
+  sprockets.append_path "../bower_components/scrollmagic/scrollmagic/minified/"
+  sprockets.import_asset "ScrollMagic.min.js"
+  
 end
 
 helpers do
