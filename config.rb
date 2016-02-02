@@ -86,7 +86,65 @@ configure :build do
 
 end
 
-sprockets.append_path File.join(root, 'bower_components')
+#bower init
+after_configuration do
+  bower_path=File.join(root, 'bower_components')
+  {
+    #bower install jquery=jquery#^1 --save
+    'jquery/dist'=>[
+      'jquery.js',
+      'jquery.min.js',
+    ],
+    #bower install jquery.easing --save
+    'jquery.easing/js'=>[
+      'jquery.easing.js',
+      'jquery.easing.min.js',
+    ],
+    #bower install velocity --save
+    'velocity'=>[
+      'velocity.js',
+      'velocity.min.js',
+    ],
+    #bower install gsap --save
+    'gsap/src/uncompressed'=>[
+      'jquery.gsap.js',
+      'TimelineLite.js',
+      'TimelineMax.js',
+      'TweenLite.js',
+      'TweenMax.js',
+    ],
+    'gsap/src/minified'=>[
+      'jquery.gsap.min.js',
+      'TimelineLite.min.js',
+      'TimelineMax.min.js',
+      'TweenLite.min.js',
+      'TweenMax.min.js',
+    ],
+    #bower install scrollmagic --save
+    'scrollmagic/scrollmagic/uncompressed/plugins'=>[
+      'debug.addIndicators.js',
+      'jquery.ScrollMagic.js',
+      'animation.gsap.js',
+      'animation.velocity.js',
+    ],
+    'scrollmagic/scrollmagic/uncompressed'=>[
+      'ScrollMagic.js',
+    ],
+    'scrollmagic/scrollmagic/minified/plugins'=>[
+      'debug.addIndicators.min.js',
+      'jquery.ScrollMagic.min.js',
+      'animation.gsap.min.js',
+      'animation.velocity.min.js',
+    ],
+    'scrollmagic/scrollmagic/minified'=>[
+      'ScrollMagic.min.js',
+    ],
+  }.each_pair do|k,a|
+    a.each do|v|
+      import_file File.join(bower_path, k,v),File.join('/js',v)
+    end
+  end
+end
 
 
 helpers do
