@@ -7,9 +7,6 @@ gem "middleman","~>4.0.0"
 # Live-reloading plugin
 gem "middleman-livereload","~>3.4.6"
 
-#Removed sprockets, add gem "middleman-sprockets", "~> 4.0.0.rc" to Gemfile
-gem "middleman-sprockets", "~> 4.0.0.rc"
-
 gem "middleman-compass", "~> 4.0.0"
 
 
