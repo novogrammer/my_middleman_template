@@ -29,3 +29,4 @@ gem 'coffee-script'
 
 #gem 'middleman-jasmine'
 
+gem 'nokogiri', '>=1.6.8.rc3'
