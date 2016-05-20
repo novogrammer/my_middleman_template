@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "mkdirp ./.tmp/dist/js/ && mkdirp ./.tmp/dist/js/foo/ && browserify -t coffeeify ./source/coffee/common.coffee > ./.tmp/dist/js/common.js && browserify -t coffeeify ./source/coffee/index.coffee > ./.tmp/dist/js/index.js && browserify -t coffeeify ./source/coffee/foo/index.coffee > ./.tmp/dist/js/foo/index.js",
-    "watch": "watch 'npm run build' source/coffee/ -du"
+    "watch": "watch \"npm run build\" source/coffee/ -du"
   },
   "repository": {
     "type": "git",
