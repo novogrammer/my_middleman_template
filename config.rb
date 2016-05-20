@@ -160,3 +160,8 @@ end
 
 activate :livereload
 
+ignore "/coffee/**"
+activate :external_pipeline,
+  name: :coffeefy,
+  command: build? ? 'npm run build' : 'npm run watch',
+  source: ".tmp/dist"

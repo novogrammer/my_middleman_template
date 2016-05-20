@@ -23,3 +23,6 @@ Gemfile.lock
 # Ignore the bower_components directory
 /bower_components
 
+/node_modules
+
+/.tmp

@@ -1,0 +1,25 @@
+{
+  "name": "my_middleman_template",
+  "version": "1.0.0",
+  "description": "my_middleman_template =====================",
+  "main": "index.js",
+  "scripts": {
+    "build": "mkdirp ./.tmp/dist/js/ && mkdirp ./.tmp/dist/js/foo/ && browserify -t coffeeify ./source/coffee/common.coffee > ./.tmp/dist/js/common.js && browserify -t coffeeify ./source/coffee/index.coffee > ./.tmp/dist/js/index.js && browserify -t coffeeify ./source/coffee/foo/index.coffee > ./.tmp/dist/js/foo/index.js",
+    "watch": "watch 'npm run build' source/coffee/ -du"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/novogrammer/my_middleman_template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/novogrammer/my_middleman_template/issues"
+  },
+  "homepage": "https://github.com/novogrammer/my_middleman_template#readme",
+  "dependencies": {
+    "coffeeify": "^2.0.1",
+    "mkdirp": "^0.5.1",
+    "watch": "^0.18.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
