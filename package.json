@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/novogrammer/my_middleman_template#readme",
   "dependencies": {
+    "browserify": "^13.0.1",
     "coffeeify": "^2.0.1",
     "mkdirp": "^0.5.1",
     "watch": "^0.18.0"

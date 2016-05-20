@@ -6,11 +6,12 @@ my_middleman_template
 ご自由にどうぞ。
 
 ##前提
-* ruby+bundler
-* nodejs+bower
+* gem install bundler
+* npm install -g bower
 
 ##導入
     bundle install --path=vendor/bundle
+    npm install
     bower install
 
 ##サーバ
